@@ -25,3 +25,41 @@ $factory->define(\App\Models\User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+$factory->define(\App\Models\Author::class, function (\Faker\Generator $faker) {
+    return [
+        'first_name' => $faker->unique()->firstName,
+        'last_name' => $faker->unique()->lastName,
+        'created_at' => \Carbon\Carbon::now(),
+    ];
+});
+
+$factory->define(\App\Models\Book::class, function (\Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->sentence,
+        'description' => $faker->text,
+        'author_id' => factory(\App\Models\Author::class)->create()->id,
+        'status' => 'Published',
+        'created_at' => \Carbon\Carbon::now(),
+    ];
+});
+
+
+$factory->state(App\Models\Attachment::class, 'with-book', function (\Faker\Generator $faker) {
+
+    return [
+        'filename' => $faker->name,
+        'created_at' => \Carbon\Carbon::now(),
+        'book_id' => factory(\App\Models\Book::class)->create()->id,
+    ];
+});
+
+$factory->define(App\Models\Attachment::class, function (\Faker\Generator $faker) {
+
+    return [
+        'filename' => $faker->name,
+        'created_at' => \Carbon\Carbon::now(),
+        'book_id' => factory(\App\Models\Book::class)->create()->id,
+    ];
+});
