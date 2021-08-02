@@ -1,0 +1,12 @@
+export const BOOK_PUBLISH = "publishBook";
+export const BOOK_DELETE = "deleteBook";
+export const BOOK_RESET_STATE = "resetBookState";
+export const BOOK_EDIT = "editBook";
+export const FETCH_BOOK = "fetchBook";
+export const FETCH_BOOKS = "fetchBooks";
+export const FETCH_AUTHORS = "fetchAuthors";
+export const CHECK_AUTH = "checkAuth";
+export const LOGIN = "login";
+export const LOGOUT = "logout";
+export const REGISTER = "register";
+export const UPDATE_USER = "updateUser";
