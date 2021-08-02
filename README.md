@@ -4,7 +4,7 @@
 ----------
 
 # Getting started
-Project demo is available at https://books.mohammadghamari.mtcdevserver4.com
+Project demo is available at http://books.mohammadghamari.mtcdevserver4.com
                                      
 ## Installation
 
