@@ -34,8 +34,8 @@
       </router-link>
 
     </div>
-    <div v-if="isLoading" class="book-preview">Loading books...</div>
-    <div v-else>
+    <span v-if="isLoading" class="book-preview">Loading books...</span>
+    <div >
       <div v-if="books.length === 0" class="book-preview">
         No books are here... yet.
       </div>
