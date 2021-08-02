@@ -12,6 +12,11 @@ class DummyDataSeeder extends Seeder
      */
     public function run(\Faker\Generator $faker)
     {
+        // create some headquarters email
+        factory(\App\Models\Book::class)->times(10)->create();
+
+        // create some attachments
+        factory(\App\Models\Attachment::class, 60)->state('with-book')->create();
 
     }
 }
